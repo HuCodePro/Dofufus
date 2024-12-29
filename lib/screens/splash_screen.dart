@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/Dofus_emeraude.png', // Remplace par ton logo
+              'assets/images/Dofus_emeraude.png',
               width: 150,
               height: 150,
             ),

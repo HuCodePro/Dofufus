@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => SplashScreen(), // Route pour le Splash Screen
-        '/home': (context) => const HomeScreen(), // Route pour la page d'accueil
+        '/home': (context) =>  HomeScreen(), // Route pour la page d'accueil
       },
     );
   }
