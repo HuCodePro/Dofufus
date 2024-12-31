@@ -1,6 +1,10 @@
 import 'package:dofufus/components/cards/cards.dart';
+import 'package:dofufus/components/drawer/drawer.dart';
+import 'package:dofufus/pages/farm/page.dart';
+import 'package:dofufus/pages/items/page.dart';
+import 'package:dofufus/pages/panoplies/page.dart';
+import 'package:dofufus/pages/quetes/page.dart';
 import 'package:flutter/material.dart';
-import 'package:dofufus/components/generic/generic_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,40 +13,58 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Accueil - Dofufus'),
+        title: const Text('Dofufus'),
         backgroundColor: const Color.fromARGB(255, 160, 204, 0),
       ),
+      drawer: const DrawerCompo(), // ddrawer ici
       body: GridView.count(
-        crossAxisCount: 2, // 2 Cards par ligne
-        crossAxisSpacing: 10, // Espacement horizontal entre les Cards
-        mainAxisSpacing: 10, // Espacement vertical entre les Cards
-        padding: const EdgeInsets.all(10), // Marges autour de la grille
+        crossAxisCount: 2, // 2 par ligne
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        padding: const EdgeInsets.all(10),
         children: [
           Cards(
-            title: 'Meilleurs Items',
-            color: const Color.fromARGB(255, 160, 204, 0),
+            title: 'Logo',
+            subtitle: 'Items',
+            color: const Color.fromARGB(255, 233, 76, 3),
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const GenericPage(
-                  title: 'Meilleurs Items',
-                  content: 'Bienvenue sur la page des Meilleurs items !',
-                  appBarColor: Color.fromARGB(255, 160, 204, 0),
-                ),
+                builder: (context) => const ItemsPage(), // route page items
               ),
             ),
           ),
           Cards(
-            title: 'Farm Zones',
+            title: 'Logo',
+            subtitle: 'Farm',
             color: const Color.fromARGB(255, 56, 142, 60),
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const GenericPage(
-                  title: 'Farm Zones',
-                  content: 'Bienvenue sur la page des zones de farm !',
-                  appBarColor: Color.fromARGB(255, 56, 142, 60),
-                ),
+                builder: (context) => const FarmPage(), // route page farm
+              ),
+            ),
+          ),
+          Cards(
+            title: 'Logo',
+            subtitle: 'Quêtes',
+            color: const Color.fromARGB(255, 117, 86, 0),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const QuetesPage(), // route page quêtes
+              ),
+            ),
+          ),
+          Cards(
+            title: 'Logo',
+            subtitle: 'Panoplies',
+            color: const Color.fromARGB(255, 216, 173, 55),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    const PanopliesPage(), // route page quêtes
               ),
             ),
           ),
