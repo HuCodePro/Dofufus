@@ -25,7 +25,6 @@ class DrawerCompo extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
-                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -63,7 +62,7 @@ class DrawerCompo extends StatelessWidget {
       leading: Icon(icon, color: Colors.green),
       title: Text(
         text,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 16),
       ),
       onTap: onTap,
     );

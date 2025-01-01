@@ -5,6 +5,7 @@ import 'package:dofufus/pages/items/page.dart';
 import 'package:dofufus/pages/panoplies/page.dart';
 import 'package:dofufus/pages/quetes/page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dofufus'),
-        backgroundColor: const Color.fromARGB(255, 160, 204, 0),
+        
       ),
       drawer: const DrawerCompo(), // ddrawer ici
       body: GridView.count(

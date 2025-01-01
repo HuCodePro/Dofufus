@@ -7,8 +7,18 @@ class ItemsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Items Dofus Unity'),
-        backgroundColor: const Color.fromARGB(255, 160, 204, 0),
+        title: const Text(
+          'Items Dofus Unity',
+            style: TextStyle(
+            color: Colors.white,
+          ),),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15), 
+            bottomRight: Radius.circular(15), 
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 233, 76, 3),
       ),
       body: const Center(
         child: Text(
