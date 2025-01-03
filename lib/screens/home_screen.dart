@@ -5,7 +5,6 @@ import 'package:dofufus/pages/items/page.dart';
 import 'package:dofufus/pages/panoplies/page.dart';
 import 'package:dofufus/pages/quetes/page.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,6 +14,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dofufus'),
+        elevation: 4,
+        shadowColor: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5), 
         
       ),
       drawer: const DrawerCompo(), // ddrawer ici
@@ -25,9 +26,9 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         children: [
           Cards(
-            title: 'Logo',
-            subtitle: 'Items',
-            color: const Color.fromARGB(255, 233, 76, 3),
+            title: 'Items',
+            color: const Color.fromARGB(255, 233, 3, 3),
+            imagePath: 'assets/images/logo_items.webp',
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
@@ -36,9 +37,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Cards(
-            title: 'Logo',
-            subtitle: 'Farm',
-            color: const Color.fromARGB(255, 56, 142, 60),
+            title: 'Métier',
+            color: const Color.fromARGB(255, 0, 255, 13),
+            imagePath: 'assets/images/logo_metier.webp',
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
@@ -47,9 +48,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Cards(
-            title: 'Logo',
-            subtitle: 'Quêtes',
-            color: const Color.fromARGB(255, 117, 86, 0),
+            title: 'Quêtes',
+            color: const Color.fromARGB(255, 246, 238, 0),
+            imagePath: 'assets/images/logo_quetes.jpg',
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
@@ -58,9 +59,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Cards(
-            title: 'Logo',
-            subtitle: 'Panoplies',
-            color: const Color.fromARGB(255, 216, 173, 55),
+            title: 'Panoplies',
+            color: const Color.fromARGB(255, 13, 0, 252),
+            imagePath: 'assets/images/logo_pano.jpg',
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(

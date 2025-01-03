@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Cards extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final Color color;
+  final String title; 
+  final Color color; 
+  final String imagePath; 
   final VoidCallback onTap;
 
   const Cards({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.color,
+    required this.imagePath,
     required this.onTap,
   });
 
@@ -19,37 +19,51 @@ class Cards extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center, // aligne card et texte
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Card(
-            color: color,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(15),
             ),
-            elevation: 5,
-            child: Container(
-              height: 100,
-              width: double.infinity,
-              alignment: Alignment.center,
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+            elevation: 12, 
+            shadowColor: color.withOpacity(0.5), 
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15), 
+              child: Container(
+                height: 150,
+                width: double.infinity, 
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(imagePath), 
+                    fit: BoxFit.cover, 
+                  ),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.black.withOpacity(0.6),
+                        Colors.transparent,
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
+                  ),
+                  alignment: Alignment.bottomLeft,
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           const SizedBox(height: 8),
-          Text(
-            subtitle, // texte sous card
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.black87,
-            ),
-            textAlign: TextAlign.center,
-          ),
         ],
       ),
     );
